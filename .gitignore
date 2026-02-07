@@ -23,6 +23,7 @@ lib64
 pip-log.txt
 
 # Unit test / coverage reports
+.stestr
 .coverage
 .tox
 nosetests.xml

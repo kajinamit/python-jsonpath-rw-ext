@@ -36,7 +36,7 @@ class Operation(jsonpath_rw.JSONPath):
             left = self.left.find(datum)
             right = self.right.find(datum)
             if left and right and len(left) == len(right):
-                for l, r in zip(left, right):
+                for l, r in zip(left, right):  # noqa: E741
                     try:
                         result.append(self.op(l.value, r.value))
                     except TypeError:
@@ -45,14 +45,14 @@ class Operation(jsonpath_rw.JSONPath):
                 return []
         elif isinstance(self.left, jsonpath_rw.JSONPath):
             left = self.left.find(datum)
-            for l in left:
+            for l in left:  # noqa: E741
                 try:
                     result.append(self.op(l.value, self.right))
                 except TypeError:
                     return []
         elif isinstance(self.right, jsonpath_rw.JSONPath):
             right = self.right.find(datum)
-            for r in right:
+            for r in right:  # noqa: E741
                 try:
                     result.append(self.op(self.left, r.value))
                 except TypeError:
