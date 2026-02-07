@@ -16,8 +16,8 @@ import re
 import jsonpath_rw
 
 
-SUB = re.compile("sub\(/(.*)/,\s+(.*)\)")
-SPLIT = re.compile("split\((.),\s+(\d+),\s+(\d+|-1)\)")
+SUB = re.compile(r"sub\(/(.*)/,\s+(.*)\)")
+SPLIT = re.compile(r"split\((.),\s+(\d+),\s+(\d+|-1)\)")
 
 
 class DefintionInvalid(Exception):
